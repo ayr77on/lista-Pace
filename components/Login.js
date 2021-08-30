@@ -16,7 +16,7 @@ const Login = ({userName,userPass,errorLogin,validateUser,handleChangeUserName,h
         <View>
              <FormControl isRequired isInvalid>
                 <Stack mx={4}>
-                    <FormControl.Label>Usuario</FormControl.Label>
+                    <FormControl.Label style={{fontSize: "bebas-neue"}}>Usuario</FormControl.Label>
                     <Input 
                         type="text"
                         variant="rounded"

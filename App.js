@@ -2,11 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, View , Text} from 'react-native';
 import { Center, NativeBaseProvider  } from "native-base";
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 import ContainerList from './components/ContainerList';
 import Login from './components/Login';
 import MenuNavigation from './components/MenuNavigation';
 
 export default function App() {
+  const [loaded] = useFonts({
+    'bebas-neue': require('./assets/fonts/BebasNeue-Regular.ttf'),
+  });
+
+
+  if (!loaded) return <Text>Esperando Carga de fonts</Text>
+
   const [userLogged,setUserLogged] = useState(false);
   const [errorLogin,setErrorLogin] = useState("");
   const [userName,setUserName] = useState("");
